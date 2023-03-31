@@ -13,7 +13,22 @@
 </figure>
 
 <input required maxlength="10" #inputValueTemplate="ngModel" [(ngModel)]="inputValue" placeholder="Type something" />
-<p>Data: {{ inputValue.toUpperCase() }}</p>
+<p *ngIf="inputValue.length < 10; else elseTemplate">Data: {{ inputValue | uppercase }}</p>
+<ng-template #elseTemplate>
+  <p>Template content for else</p>
+</ng-template>
 <p>Valid: {{ inputValueTemplate.valid }}</p>
+<section>
+  <h2>Emojis</h2>
+  <input placeholder="Type an emoji" [(ngModel)]="emoji" />
+  <button (click)="addEmoji()">Add emoji</button>
+  <ul>
+    <li *ngFor="let emoji of emojis; let i = index">
+      <p>{{ i + 1 }}. {{ emoji }}</p>
+      <button (click)="removeEmoji(i)">Remove</button>
+    </li>
+  </ul>
+</section>
+
 
 <router-outlet></router-outlet>

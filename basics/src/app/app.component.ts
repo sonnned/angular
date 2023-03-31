@@ -11,6 +11,8 @@ export class AppComponent {
   showImage = true;
   currencyValue = 2345;
   inputValue = '';
+  emojis: string[] = [ '😂' , '🐦', '🐳','🌮', '💚']
+  emoji: string = '';
 
   toggleImage() {
     this.showImage = !this.showImage;
@@ -28,5 +30,14 @@ export class AppComponent {
   onKeyUp(event: KeyboardEvent) {
     const element = event.target as HTMLInputElement;
     this.inputValue = element.value;
+  }
+
+  addEmoji() {
+    this.emojis.push(this.emoji);
+    this.emoji = '';
+  }
+
+  removeEmoji(index: number) {
+    this.emojis.splice(index, 1);
   }
 }
