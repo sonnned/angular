@@ -11,6 +11,7 @@ export class ImgComponent implements OnChanges, OnInit, AfterViewInit, OnDestroy
   imageUrl = 'https://source.unsplash.com/random/400x400'
   imageAlt = 'Random Image'
   defaultTitle = 'Insert a title'
+  counter = 0
 
   constructor() {
     //before the component is rendered
@@ -24,6 +25,7 @@ export class ImgComponent implements OnChanges, OnInit, AfterViewInit, OnDestroy
     //waits for changes in the input properties
     //runs each time the input properties change
     console.log('Image Component - ngOnChanges')
+    this.counter++
   }
 
   ngOnInit() {
