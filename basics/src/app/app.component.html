@@ -1,15 +1,18 @@
 <h1>Welcome to {{ title }}</h1>
 <h1>{{ 'hello'.repeat(2) }}</h1>
-<section class="box" (keyup)="onKeyUp($event)">
+<section class="box">
   <p>{{ currencyValue | currency }}</p>
   <button (click)="increaseCurrencyValue()">Increase value</button>
   <button (click)="decreaseCurrencyValue()">Increase value</button>
-  <input [value]="inputValue" placeholder="Type something"/>
+  <input [value]="inputValue" placeholder="Type something" (keyup)="onKeyUp($event)" />
   <p>{{ inputValue }}</p>
 </section>
 <figure>
   <img [src]="imageUrl" alt="random image" *ngIf="showImage" />
   <button (click)="toggleImage()">{{ showImage ? "Hide image" : "Show image" }}</button>
 </figure>
+
+<input [(ngModel)]="inputValue" placeholder="Type something" />
+<p>{{ inputValue.toUpperCase() }}</p>
 
 <router-outlet></router-outlet>
