@@ -10,4 +10,8 @@ export class AppComponent {
   imageUrl = 'https://source.unsplash.com/random';
   showImage = true;
   progress = 54;
+
+  toggleImage() {
+    this.showImage = !this.showImage;
+  }
 }

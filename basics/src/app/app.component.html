@@ -2,9 +2,8 @@
 <h1>{{ 'hello'.repeat(2) }}</h1>
 <p>{{ 2042 | currency }}</p>
 <figure>
-  <img [src]="imageUrl" alt="random image" />
-  <button>{{showImage ? "Hide image" : "Show image"}}</button>
+  <img [src]="imageUrl" alt="random image" *ngIf="showImage"/>
+  <button (click)="toggleImage()">{{ showImage ? "Hide image" : "Show image" }}</button>
 </figure>
-<progress max="100" [value]="progress"></progress>
 
 <router-outlet></router-outlet>
