@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'basics';
   imageUrl = 'https://source.unsplash.com/random';
+  showImage = true;
+  progress = 54;
 }
