@@ -1,8 +1,14 @@
 <h1>Welcome to {{ title }}</h1>
 <h1>{{ 'hello'.repeat(2) }}</h1>
-<p>{{ 2042 | currency }}</p>
+<section class="box" (keyup)="onKeyUp($event)">
+  <p>{{ currencyValue | currency }}</p>
+  <button (click)="increaseCurrencyValue()">Increase value</button>
+  <button (click)="decreaseCurrencyValue()">Increase value</button>
+  <input [value]="inputValue" placeholder="Type something"/>
+  <p>{{ inputValue }}</p>
+</section>
 <figure>
-  <img [src]="imageUrl" alt="random image" *ngIf="showImage"/>
+  <img [src]="imageUrl" alt="random image" *ngIf="showImage" />
   <button (click)="toggleImage()">{{ showImage ? "Hide image" : "Show image" }}</button>
 </figure>
 
