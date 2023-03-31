@@ -12,7 +12,8 @@
   <button (click)="toggleImage()">{{ showImage ? "Hide image" : "Show image" }}</button>
 </figure>
 
-<input [(ngModel)]="inputValue" placeholder="Type something" />
-<p>{{ inputValue.toUpperCase() }}</p>
+<input required maxlength="10" #inputValueTemplate="ngModel" [(ngModel)]="inputValue" placeholder="Type something" />
+<p>Data: {{ inputValue.toUpperCase() }}</p>
+<p>Valid: {{ inputValueTemplate.valid }}</p>
 
 <router-outlet></router-outlet>
