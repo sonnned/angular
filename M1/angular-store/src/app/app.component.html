@@ -1,0 +1,6 @@
+<app-img [imageTitle]="imageTitle" (imageLoaded)="onImageLoaded($event)"></app-img>
+<section>
+  <p>Find a title to the image</p>
+  <input type="text" placeholder="Type something" [(ngModel)]="imageTitle"/>
+</section>
+<router-outlet></router-outlet>
